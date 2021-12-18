@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class Item {
 
     private int weight;
-    private int value;
+    private double value;
     private int locationInKnapSack;
     private double itemEvaluation;
 
@@ -39,7 +39,7 @@ public class Item {
     }
 
     public double getItemEvaluation() {
-        return itemEvaluation;
+       return itemEvaluation = value / weight;
     }
 
     public void setItemEvaluation(double itemEvaluation) {

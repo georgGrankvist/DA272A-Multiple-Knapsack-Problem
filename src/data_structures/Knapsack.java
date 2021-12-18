@@ -12,12 +12,25 @@ public class Knapsack {
     private double totalValue;
 
 
+
+    public void setCurrentWeight(int currentWeight) {
+        this.currentWeight = currentWeight;
+    }
+
     public void printContents () {
         for (Item item : bag) {
             System.out.println("Item value = " + item.getValue() + " Item weight = " + item.getWeight() + "");
         }
 
         System.out.println();
+    }
+
+    public boolean isFull() {
+        return currentWeight == maximumWeight;
+    }
+
+    public int leftOverWeight () {
+        return maximumWeight - currentWeight;
     }
 
     public ArrayList<Item> getBag() {
@@ -49,9 +62,28 @@ public class Knapsack {
         totalValue = 0;
     }
 
-    public void sortBag () {
-        bag.sort(Comparator.comparing(Item::getItemEvaluation));
+    public Item returnHeaviest (int weight) {
+
+        int heaviest = 0;
+        int heaviestValue = 0;
+
+        for (int i = 0; i < bag.size() ; i++ ) {
+
+            if (bag.get(i).getWeight() <= weight) {
+
+                if (heaviest < bag.get(i).getWeight())
+                {
+                    heaviest = bag.get(i).getWeight();
+                    heaviestValue = (int) bag.get(i).getValue();
+                }
+            }
+        }
+
+        return new Item(heaviest,heaviestValue);
     }
+
+
+
 
     public boolean itemFits(Item item) {
         return item.getWeight() <= (maximumWeight - getCurrentWeight());
