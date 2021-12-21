@@ -1,8 +1,7 @@
 package data_structures;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+
 
 public class Knapsack {
 
@@ -21,7 +20,6 @@ public class Knapsack {
         for (Item item : bag) {
             System.out.println("Item value = " + item.getValue() + " Item weight = " + item.getWeight() + "");
         }
-
         System.out.println();
     }
 
@@ -46,7 +44,6 @@ public class Knapsack {
     }
 
     public Knapsack(int maximumWeight) {
-
         this.maximumWeight = maximumWeight;
     }
 
@@ -86,7 +83,7 @@ public class Knapsack {
 
 
     public boolean itemFits(Item item) {
-        return item.getWeight() <= (maximumWeight - getCurrentWeight());
+        return item.getWeight() <= (maximumWeight - this.getCurrentWeight());
     }
 
     public void remove (Item item) {

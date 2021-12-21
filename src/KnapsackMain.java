@@ -180,8 +180,6 @@ public class KnapsackMain {
 
     private static void fillWithLeftOverItems(Knapsack adjacentKnapsack, ArrayList <Item> itemArray) {
 
-
-
         for (Item item : itemArray ) {
             if (item.getWeight() <= adjacentKnapsack.leftOverWeight()) {
                 adjacentKnapsack.insert(item);
@@ -192,9 +190,7 @@ public class KnapsackMain {
 
 
     public static boolean spaceAvailable(ArrayList<Knapsack> knapSackArray) {
-
         for (Knapsack knapsack : knapSackArray) {
-
             if (!knapsack.isFull()) {
                 return true;
             }
