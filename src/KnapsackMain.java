@@ -54,6 +54,10 @@ public class KnapsackMain {
         }
     }
 
+    /**
+     * Print items in unused bag
+     * @param itemArray
+     */
     public static void printLeftOverItems (ArrayList <Item> itemArray) {
         for (Item item : itemArray) {
             System.out.println("Item leftover value = " + item.getValue() + ", Item leftover weight = " + item.getWeight());
