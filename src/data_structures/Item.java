@@ -1,7 +1,5 @@
 package data_structures;
 
-import java.util.Comparator;
-
 public class Item {
 
     private int weight;
@@ -45,6 +43,4 @@ public class Item {
     public void setItemEvaluation(double itemEvaluation) {
         this.itemEvaluation = itemEvaluation;
     }
-
-
 }
